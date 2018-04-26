@@ -1,0 +1,14 @@
+.pokemon-type {
+  text-transform: capitalize;
+
+  color: white;
+  border-radius: 5px;
+
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 1);
+
+  font-family: 'Courier New', Courier, monospace;
+
+  &--electric {
+    background: yellow;
+  }
+}
