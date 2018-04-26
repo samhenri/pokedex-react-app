@@ -1,0 +1,8 @@
+**/node_modules
+**/public
+**/build
+**/config
+.prettierrc
+.editorconfig
+.stylelintrc
+jest.config.js
