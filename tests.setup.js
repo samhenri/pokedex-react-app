@@ -1,7 +1,7 @@
 import jsdom from 'jsdom';
 import chai from 'chai';
 import spies from 'chai-spies';
-import { configure } from 'enzyme';
+import { configure, shallow, render, mount } from 'enzyme';
 import { default as Adapter } from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
@@ -12,6 +12,9 @@ jest.useFakeTimers();
 
 global.chai = chai;
 global.should = chai.should();
+global.shallow = shallow;
+global.render = render;
+global.mount = mount;
 
 // ========================================================
 // apply `spies` plugin to chai
