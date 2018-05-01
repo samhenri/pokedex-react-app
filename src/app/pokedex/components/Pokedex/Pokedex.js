@@ -1,45 +1,67 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { PokedexListItem } from '../PokedexListItem';
-
-const CN = 'pokedex';
 
 export class Pokedex extends Component {
   static propTypes = {
-    className: PropTypes.string,
-    pokemon: PropTypes.array.isRequired,
+    count: PropTypes.number,
+    changePage: PropTypes.func,
+    decrement: PropTypes.func,
+    decrementAsync: PropTypes.func,
+    increment: PropTypes.func,
+    incrementAsync: PropTypes.func,
+    isIncrementing: PropTypes.bool,
+    isDecrementing: PropTypes.bool,
   };
 
-  shouldComponentUpdate(nextProps) {
-    return nextProps.pokemon !== this.props.pokemon;
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0,
+      isIncrementing: false,
+      isDecrementing: false,
+    };
   }
 
-  renderListItems = (list) => {
-    const pokedexListClassName = classNames(`${CN}__list`);
+  render() {
+    const {
+      count,
+      changePage,
+      decrement,
+      decrementAsync,
+      increment,
+      incrementAsync,
+      isIncrementing,
+      isDecrementing,
+    } = this.props;
 
     return (
-      <ul className={pokedexListClassName} id="pokedex">
-        {list.map((pokemon) => {
-          const species = pokemon.pokemon_species;
+      <div>
+        <h1>Home</h1>
+        <p>Count: {count}</p>
 
-          return (
-            <PokedexListItem
-              key={pokemon.entry_number}
-              name={species.name}
-              number={pokemon.entry_number}
-            />
-          );
-        })}
-      </ul>
+        <p>
+          <button onClick={increment} disabled={isIncrementing}>
+            Increment
+          </button>
+          <button onClick={incrementAsync} disabled={isIncrementing}>
+            Increment Async
+          </button>
+        </p>
+
+        <p>
+          <button onClick={decrement} disabled={isDecrementing}>
+            Decrementing
+          </button>
+          <button onClick={decrementAsync} disabled={isDecrementing}>
+            Decrement Async
+          </button>
+        </p>
+
+        <p>
+          <button onClick={changePage}>Go to about page via redux</button>
+        </p>
+      </div>
     );
-  };
-
-  render() {
-    const { className, pokemon } = this.props;
-
-    const pokedexWrapperClassName = classNames(CN, className);
-
-    return <div className={pokedexWrapperClassName}>{this.renderListItems(pokemon)}</div>;
   }
 }

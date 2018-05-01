@@ -43,7 +43,10 @@ export class SearchInput extends Component {
     const { dirty } = this.state;
 
     const searchInputWrapperClassName = classNames(CN, className);
-    const searchInputClassName = classNames(`${CN}__input`, dirty && `${CN}__input--is-dirty`);
+    const searchInputClassName = classNames(
+      `${CN}__input`,
+      dirty && `${CN}__input--is-dirty`,
+    );
 
     return (
       <div className={searchInputWrapperClassName}>
