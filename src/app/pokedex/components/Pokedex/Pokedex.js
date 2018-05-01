@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Pokeball } from '../../../../shared/components/Pokeball';
 
 export class Pokedex extends Component {
   static propTypes = {
@@ -38,6 +39,7 @@ export class Pokedex extends Component {
       <div>
         <h1>Pokedex</h1>
         <span>{pokedex.length}</span>
+        <Pokeball />
       </div>
     );
   }
