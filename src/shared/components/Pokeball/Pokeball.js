@@ -1,7 +1,29 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-export default class Pokeball extends Component {
+import './Pokeball.scss';
+
+const CN = 'pokeball';
+
+export class Pokeball extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+  };
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    return <div className="pokeball">Loading...</div>;
+    const { className } = this.props;
+
+    const containerClassName = classNames(`${CN}__wrapper`, className);
+
+    return (
+      <div className={containerClassName}>
+        <div className={CN} />
+      </div>
+    );
   }
 }

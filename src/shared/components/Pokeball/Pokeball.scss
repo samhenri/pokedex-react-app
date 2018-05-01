@@ -1,0 +1,93 @@
+$pkbSize: 196px;
+$pkbInner: 60px;
+$pkbBorder: 15px;
+$beforeDiam: $pkbInner;
+$afterDiam: calc(90px - (#{$pkbBorder} * 3));
+$afterPos: calc(#{$beforeDiam} - (#{$pkbBorder} * 3));
+
+$red: #ba0c2f;
+$black: #000;
+$white: #fff;
+$background: lighten(#e74c3c, 10);
+
+.pokeball__wrapper {
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba($white, .5);
+
+  .pokeball {
+    position: relative;
+
+    box-sizing: border-box;
+    width: $pkbSize;
+    height: $pkbSize;
+    margin: 0 auto;
+
+    animation-name: shake;
+
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+    border: $pkbBorder solid $black;
+    border-radius: 100%;
+    background: linear-gradient(180deg, $red 0%, $red 44%, $black 44%, $black 56%, $white 56%, $white 100%);
+    animation-fill-mode: both;
+
+    &::before,
+    &::after {
+      position: absolute;
+
+      display: block;
+
+      content: ' ';
+
+      border-radius: 100%;
+    }
+
+    &::before {
+      top: calc(50% - #{$beforeDiam} / 2);
+      left: calc(50% - #{$beforeDiam} / 2);
+
+      width: $beforeDiam;
+      height: $beforeDiam;
+
+      background: $black;
+    }
+
+    &::after {
+      top: calc(50% - ((#{$afterPos} / 2) + #{$pkbBorder}));
+      left: calc(50% - ((#{$afterPos} / 2) + #{$pkbBorder}));
+
+      width: $afterDiam;
+      height: $afterDiam;
+
+      border: double $pkbBorder $black;
+      background: #fff;
+    }
+  }
+}
+
+@keyframes shake {
+  from {
+    transform: none;
+  }
+
+  20% {
+    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 10deg);
+  }
+
+  to {
+    transform: none;
+  }
+}
