@@ -2,6 +2,8 @@
 **/public
 **/build
 **/config
+**/coverage
+**/scripts
 .prettierrc
 .editorconfig
 .stylelintrc

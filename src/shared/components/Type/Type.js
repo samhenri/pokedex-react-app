@@ -13,7 +13,11 @@ export class Type extends Component {
   render() {
     const { type, className } = this.props;
 
-    const typeClass = classNames('pokemon-type', `pokemon-type--${type}`, className);
+    const typeClass = classNames(
+      'pokemon-type',
+      `pokemon-type--${type}`,
+      className,
+    );
 
     return <span className={typeClass}>{type}</span>;
   }

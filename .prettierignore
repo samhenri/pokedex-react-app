@@ -1,2 +1,5 @@
 package.json
 .prettierrc
+public/**/
+scripts/**/
+coverage/**/

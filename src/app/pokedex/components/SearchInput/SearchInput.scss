@@ -1,0 +1,11 @@
+.pokemon-search {
+  display: flex;
+
+  &__input {
+    width: 100%;
+
+    &--is-dirty {
+      border: 1px solid red;
+    }
+  }
+}

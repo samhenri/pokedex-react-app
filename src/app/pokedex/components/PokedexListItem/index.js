@@ -1,0 +1,1 @@
+export { PokedexListItem } from './PokedexListItem';

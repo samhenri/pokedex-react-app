@@ -24,7 +24,9 @@ chai.use(spies);
 // ========================================================
 // Predefine DOM env to test env
 // ========================================================
-const { document } = new JSDOM('<!doctype html><html><body></body></html>').window;
+const { document } = new JSDOM(
+  '<!doctype html><html><body></body></html>',
+).window;
 global.document = document;
 global.window = document.defaultView;
 
@@ -33,7 +35,10 @@ global.window = document.defaultView;
 // Also the “not” property is read-only while we need to write to it to merge it with the “not” property
 // of the Jest expectations.
 // ========================================================
-const originalNot = Object.getOwnPropertyDescriptor(chai.Assertion.prototype, 'not').get;
+const originalNot = Object.getOwnPropertyDescriptor(
+  chai.Assertion.prototype,
+  'not',
+).get;
 
 Object.defineProperty(chai.Assertion.prototype, 'not', {
   get() {

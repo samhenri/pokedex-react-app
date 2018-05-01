@@ -5,6 +5,9 @@ module.exports = {
   sections: [
     { name: 'Introduction', content: './README.md' },
     { name: 'Core UI', components: './src/core/components/**/[A-Z]*.js' },
-    { name: 'Pokémon View UI', components: './src/app/*/components/**/[A-Z]*.js' },
+    {
+      name: 'Pokémon View UI',
+      components: './src/app/*/components/**/[A-Z]*.js',
+    },
   ],
 };
