@@ -1,32 +1,19 @@
-import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync,
-} from '../../reducers/pokedex';
+
+import { getPokedex } from '../../actions/getFullPokedex';
 
 import { Pokedex } from '../../app/pokedex/components/Pokedex';
 
-const mapStateToProps = (state) => ({
-  count: state.pokedex.count,
-  isIncrementing: state.pokedex.isIncrementing,
-  isDecrementing: state.pokedex.isDecrementing,
-});
+const mapStateToProps = (state) => {
+  return {
+    pokedex: state.pokedex,
+    isFetching: state.pokedex.length > 0 ? false : true,
+  };
+};
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      increment,
-      incrementAsync,
-      decrement,
-      decrementAsync,
-      changePage: () => push('/pokemon/'),
-    },
-    dispatch,
-  );
+  bindActionCreators({ getPokedex }, dispatch);
 
 export const PokedexContainer = connect(mapStateToProps, mapDispatchToProps)(
   Pokedex,

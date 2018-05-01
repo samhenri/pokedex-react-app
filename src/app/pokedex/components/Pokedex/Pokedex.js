@@ -3,64 +3,41 @@ import PropTypes from 'prop-types';
 
 export class Pokedex extends Component {
   static propTypes = {
-    count: PropTypes.number,
-    changePage: PropTypes.func,
-    decrement: PropTypes.func,
-    decrementAsync: PropTypes.func,
-    increment: PropTypes.func,
-    incrementAsync: PropTypes.func,
-    isIncrementing: PropTypes.bool,
-    isDecrementing: PropTypes.bool,
+    pokedex: PropTypes.array,
+    isFetching: PropTypes.bool,
   };
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      count: 0,
-      isIncrementing: false,
-      isDecrementing: false,
-    };
   }
 
+  componentDidUpdate() {
+    console.info('pokedex loaded');
+  }
+
+  renderPokedexList = () => {
+    const { pokedex } = this.props;
+
+    pokedex.map((pokemon, i) => {
+      return (
+        <li key={i}>
+          <span>
+            {i} - {pokemon.title}
+          </span>
+        </li>
+      );
+    });
+  };
+
   render() {
-    const {
-      count,
-      changePage,
-      decrement,
-      decrementAsync,
-      increment,
-      incrementAsync,
-      isIncrementing,
-      isDecrementing,
-    } = this.props;
+    const { pokedex, isFetching } = this.props;
+
+    console.log(pokedex.length, isFetching);
 
     return (
       <div>
-        <h1>Home</h1>
-        <p>Count: {count}</p>
-
-        <p>
-          <button onClick={increment} disabled={isIncrementing}>
-            Increment
-          </button>
-          <button onClick={incrementAsync} disabled={isIncrementing}>
-            Increment Async
-          </button>
-        </p>
-
-        <p>
-          <button onClick={decrement} disabled={isDecrementing}>
-            Decrementing
-          </button>
-          <button onClick={decrementAsync} disabled={isDecrementing}>
-            Decrement Async
-          </button>
-        </p>
-
-        <p>
-          <button onClick={changePage}>Go to about page via redux</button>
-        </p>
+        <h1>Pokedex</h1>
+        <span>{pokedex.length}</span>
       </div>
     );
   }
