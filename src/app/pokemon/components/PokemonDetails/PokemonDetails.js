@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './Pokemon.scss';
+import './PokemonDetails.scss';
 
-export class Pokemon extends Component {
+export class PokemonDetails extends Component {
   static propTypes = {
     className: PropTypes.string,
     id: PropTypes.number,
