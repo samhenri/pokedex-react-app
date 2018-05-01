@@ -1,0 +1,1 @@
+export { PokedexContainer } from './PokedexContainer';
