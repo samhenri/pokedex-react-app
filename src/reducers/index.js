@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import pokedex from './pokedex';
+import { pokemon, pokemonSpecies, evolutionChain } from './pokemon';
 import fetchPokedexError from './fetchPokedexError';
 import {
   fetchPokemonError,
@@ -18,6 +19,9 @@ import filtered from './filterPokedex';
 export default combineReducers({
   router: routerReducer,
   pokedex,
+  pokemon,
+  species: pokemonSpecies,
+  evolution: evolutionChain,
   visible: filtered,
   isFetchingPokedex,
   isFetchingPokemon,

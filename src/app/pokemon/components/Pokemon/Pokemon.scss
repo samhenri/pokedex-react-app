@@ -1,0 +1,11 @@
+.pokemon {
+  &__wrapper {
+    position: relative;
+
+    display: flex;
+
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
+  }
+}

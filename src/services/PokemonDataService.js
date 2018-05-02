@@ -4,7 +4,7 @@ const ROOT_URL = 'https://pokeapi.co/api/v2';
 
 const API_ENDPOINTS = {
   POKEMON: 'pokemon',
-  SPECIES: 'pokemon_species',
+  SPECIES: 'pokemon-species',
   EVOLUTION_CHAIN: 'evolution-chain',
 };
 
