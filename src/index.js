@@ -5,7 +5,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import store, { history } from './store';
 import { Route } from 'react-router-dom';
 import { PokedexContainer } from './containers/Pokedex';
-import Pokemon from './containers/Pokemon';
+import { PokemonContainer } from './containers/Pokemon';
 import { getPokedex } from './actions/getFullPokedex';
 
 import 'sanitize.css/sanitize.css';
@@ -23,7 +23,7 @@ render(
       <div>
         <main>
           <Route exact path="/" component={PokedexContainer} />
-          <Route path="/pokemon/:pokemon" component={Pokemon} />
+          <Route path="/pokemon/:pokemon" component={PokemonContainer} />
         </main>
       </div>
     </ConnectedRouter>
