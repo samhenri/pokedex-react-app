@@ -100,27 +100,34 @@ export function getEvolutionChain(id) {
   };
 }
 
+// This has to be done in order to get the correct Evolution Chain from the Pokemon
+// Otherwise the application will crash and it wouldn't possible to merge all data
+
 export function getPokemon(id) {
   return (dispatch) => {
     dispatch(getPokemonRequest());
     return PokemonDataService.getPokemon(id)
       .then((resp) => {
         const pokemonData = resp.data;
-        PokemonDataService.getPokemonSpecies(id).then((resp) => {
-          const speciesData = resp.data;
-          let evolutionChain = resp.data.evolution_chain.url.split('/');
-          evolutionChain = evolutionChain.pop() || evolutionChain.pop();
-          const spreadData = { ...pokemonData, ...speciesData };
-          PokemonDataService.getEvolutionChain(evolutionChain).then((resp) => {
-            const evolutionData = resp.data;
-            dispatch(
-              getPokemonSuccess({
-                ...spreadData,
-                ...evolutionData,
-              }),
-            );
-          });
-        });
+        PokemonDataService.getPokemonSpecies(id)
+          .then((resp) => {
+            const speciesData = resp.data;
+            let evolutionChain = resp.data.evolution_chain.url.split('/');
+            evolutionChain = evolutionChain.pop() || evolutionChain.pop();
+            const spreadData = { ...pokemonData, ...speciesData };
+            PokemonDataService.getEvolutionChain(evolutionChain)
+              .then((resp) => {
+                const evolutionData = resp.data;
+                dispatch(
+                  getPokemonSuccess({
+                    ...spreadData,
+                    ...evolutionData,
+                  }),
+                );
+              })
+              .catch((error) => dispatch(getEvolutionChainError(error)));
+          })
+          .catch((error) => dispatch(getPokemonSpeciesError(error)));
       })
       .catch((error) => dispatch(getPokemonError(error)));
   };

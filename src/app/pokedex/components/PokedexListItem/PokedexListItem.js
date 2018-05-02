@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import { names } from '../../../../constants/pokemonForms';
 
 import './PokedexListItem.scss';
@@ -39,13 +40,15 @@ export class PokedexListItem extends Component {
 
     return (
       <li className={listItemWrapperClassName}>
-        <div className={pokemonSpriteWrapperClassName}>
-          <span className={pokemonSpriteClassName} />
-        </div>
-        <div className={pokemonInfoWrapperClassName}>
-          <span className={dexnumClassName}>{dex}</span>
-          <span className={pokemonClassName}>{correctedName}</span>
-        </div>
+        <Link to={{ pathname: `/pokemon/${number}` }}>
+          <div className={pokemonSpriteWrapperClassName}>
+            <span className={pokemonSpriteClassName} />
+          </div>
+          <div className={pokemonInfoWrapperClassName}>
+            <span className={dexnumClassName}>{dex}</span>
+            <span className={pokemonClassName}>{correctedName}</span>
+          </div>
+        </Link>
       </li>
     );
   }
