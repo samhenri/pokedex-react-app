@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Pokemon } from '../Pokemon';
+import { PokemonStats } from '../PokemonStats';
 
 const mockPokemon = {
   id: 1,
@@ -13,7 +13,7 @@ const mockPokemon = {
 describe('<Pokemon /> component', () => {
   it('should render Bulbasaur type', () => {
     const component = shallow(
-      <Pokemon
+      <PokemonStats
         id={mockPokemon.id}
         name={mockPokemon.name}
         type={mockPokemon.type}

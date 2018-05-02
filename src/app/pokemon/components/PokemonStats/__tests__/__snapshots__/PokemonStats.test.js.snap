@@ -4,7 +4,7 @@ exports[`<Pokemon /> component should render Bulbasaur type 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Pokemon
+  Symbol(enzyme.__unrendered__): <PokemonStats
     height={0.7}
     id={1}
     name="Bulbasaur"
