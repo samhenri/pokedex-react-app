@@ -106,7 +106,7 @@ export class Pokedex extends Component {
     return (
       <div className={pokedexWrapperClassName}>
         <div className={pokedexClassName}>
-          <SearchInput onInput={this.onPokemonSearch} />
+          {!isFetching && <SearchInput onInput={this.onPokemonSearch} />}
           {!isFetching && pokedex && this.renderPokedexList()}
         </div>
         {isFetching && <Pokeball />}

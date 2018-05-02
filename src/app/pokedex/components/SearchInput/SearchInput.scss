@@ -1,11 +1,29 @@
 .pokemon-search {
+  position: absolute;
+  z-index: 9999;
+
   display: flex;
+
+  width: 100%;
+  padding: 1rem;
+
+  background: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
 
   &__input {
     width: 100%;
 
-    &--is-dirty {
-      border: 1px solid red;
+    padding: 1rem 0;
+
+    transition: all .3s;
+
+    border: 0;
+    border-bottom: 3px solid #ccc;
+    background: white;
+
+    &:focus {
+      border-bottom: 3px solid #fd4e49;
+      outline: none;
     }
   }
 }
