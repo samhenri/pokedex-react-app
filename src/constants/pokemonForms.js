@@ -1,5 +1,32 @@
 // Constants to resolve image filenames with pokemondb api
 
+export const names = {
+  '29': 'nidoran ♀',
+  '32': 'nidoran ♂',
+  '386': 'deoxys',
+  '413': 'wormadam',
+  '479': 'rotom',
+  '487': 'giratina',
+  '492': 'shaymin',
+  '555': 'darmanitan',
+  '641': 'tornadus',
+  '642': 'thundurus',
+  '645': 'landorus',
+  '646': 'kyurem',
+  '647': 'keldeo',
+  '648': 'meloetta',
+  '678': 'meowstic',
+  '681': 'aegislash',
+  '710': 'pumpkaboo',
+  '711': 'gourgeist',
+  '718': 'zygarde',
+  '720': 'hoopa',
+  '745': 'lycanroc',
+  '741': 'oricorio',
+  '746': 'wishiwashi',
+  '774': 'minior',
+};
+
 export const forms = {
   '29': ['nidoran-f'],
   '32': ['nidoran-m'],

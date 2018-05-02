@@ -10,6 +10,7 @@ import { getPokedex } from './actions/getFullPokedex';
 
 import 'sanitize.css/sanitize.css';
 import './index.css';
+import './shared/assets/pokemon_sprites.css';
 
 const target = document.querySelector('#root');
 

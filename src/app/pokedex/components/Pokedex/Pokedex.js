@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Pokeball } from '../../../../shared/components/Pokeball';
+import { PokedexListItem } from '../PokedexListItem';
+import './Pokedex.scss';
+
+const CN = 'pokedex';
 
 export class Pokedex extends Component {
   static propTypes = {
+    className: PropTypes.string,
     pokedex: PropTypes.array,
     isFetching: PropTypes.bool,
   };
@@ -19,27 +25,31 @@ export class Pokedex extends Component {
   renderPokedexList = () => {
     const { pokedex } = this.props;
 
-    pokedex.map((pokemon, i) => {
-      return (
-        <li key={i}>
-          <span>
-            {i} - {pokemon.title}
-          </span>
-        </li>
-      );
-    });
+    const pokedexListClassName = classNames(`${CN}__list`);
+
+    return (
+      <ul className={pokedexListClassName}>
+        {pokedex.map((pokemon, i) => {
+          return <PokedexListItem key={i} name={pokemon.name} number={i + 1} />;
+        })}
+      </ul>
+    );
   };
 
   render() {
-    const { pokedex, isFetching } = this.props;
+    const { className, pokedex, isFetching } = this.props;
 
     console.log(pokedex.length, isFetching);
 
+    const pokedexWrapperClassName = classNames(`${CN}__wrapper`, className);
+    const pokedexClassName = classNames(`${CN}__main`);
+
     return (
-      <div>
-        <h1>Pokedex</h1>
-        <span>{pokedex.length}</span>
-        <Pokeball />
+      <div className={pokedexWrapperClassName}>
+        <div className={pokedexClassName}>
+          {!isFetching && this.renderPokedexList()}
+        </div>
+        {isFetching && <Pokeball />}
       </div>
     );
   }
