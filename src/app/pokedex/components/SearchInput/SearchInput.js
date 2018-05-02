@@ -19,26 +19,23 @@ export class SearchInput extends Component {
       pokemon: '',
       dirty: false,
     };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
-  handleInputChange = (e) => {
+  handleInputChange(e) {
     this.setState({ pokemon: e.target.value });
-  };
+  }
 
-  handleBlur = () => {
+  handleBlur() {
     this.setState({
-      touched: true,
+      dirty: true,
     });
-  };
-
-  onInputHandler() {
-    const { onInput } = this.props;
-
-    onInput && onInput(event);
   }
 
   render() {
-    const { className } = this.props;
+    const { className, onInput } = this.props;
 
     const { dirty } = this.state;
 
@@ -54,7 +51,7 @@ export class SearchInput extends Component {
           className={searchInputClassName}
           onBlur={this.handleBlur}
           onChange={this.handleInputChange}
-          onInput={this.onInputHandler}
+          onInput={onInput}
           placeholder="Search"
           type="text"
         />

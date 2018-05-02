@@ -11,8 +11,12 @@ export class PokedexListItem extends Component {
   static propTypes = {
     className: PropTypes.string,
     name: PropTypes.string.isRequired,
-    number: PropTypes.number.isRequired,
+    number: PropTypes.string.isRequired,
   };
+
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     const { className, name, number } = this.props;
@@ -31,7 +35,7 @@ export class PokedexListItem extends Component {
     const dexnumClassName = classNames(`${CN}__dexnum`);
     const pokemonClassName = classNames(`${CN}__name`);
 
-    const dex = number.toString().padStart(3, '0');
+    const dex = number.padStart(3, '0');
 
     return (
       <li className={listItemWrapperClassName}>
