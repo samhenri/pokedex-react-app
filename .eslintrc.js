@@ -31,5 +31,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/no-unassigned-import': 0,
     'import/no-named-as-default-member': 0,
+    'camelcase': 0
   },
 };
