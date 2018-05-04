@@ -1,3 +1,5 @@
+@import '../../../_variables';
+
 $pkbSize: 196px;
 $pkbInner: 60px;
 $pkbBorder: 15px;
@@ -5,9 +7,8 @@ $beforeDiam: $pkbInner;
 $afterDiam: calc(90px - (#{$pkbBorder} * 3));
 $afterPos: calc(#{$beforeDiam} - (#{$pkbBorder} * 3));
 
-$red: #ba0c2f;
-$black: #000;
-$white: #fff;
+$red: $pokeball-red;
+$black: $pokeball-black;
 
 .pokeball__wrapper {
   position: absolute;

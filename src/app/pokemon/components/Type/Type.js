@@ -4,6 +4,8 @@ import classNames from 'classnames';
 
 import './Type.scss';
 
+const CN = 'pokemon-type';
+
 export class Type extends Component {
   static propTypes = {
     className: PropTypes.string,
@@ -13,11 +15,7 @@ export class Type extends Component {
   render() {
     const { type, className } = this.props;
 
-    const typeClass = classNames(
-      'pokemon-type',
-      `pokemon-type--${type}`,
-      className,
-    );
+    const typeClass = classNames(CN, `${CN}--is-${type}`, className);
 
     return <span className={typeClass}>{type}</span>;
   }

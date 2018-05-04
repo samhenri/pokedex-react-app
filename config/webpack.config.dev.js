@@ -187,6 +187,13 @@ module.exports = {
             ],
           },
           {
+              test: /\.(jpe?g|png|gif|svg)$/i,
+              include: [
+                  path.resolve(__dirname, 'src/shared/assets')
+              ],
+              use: 'file-loader?name=[path][name].[ext]'
+          },
+          {
             test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
             use: [
               {

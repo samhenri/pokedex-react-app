@@ -1,0 +1,28 @@
+@import '../../../../../_variables.scss';
+
+.arrow {
+  position: absolute;
+
+  display: flex;
+
+  width: 32px;
+  height: 32px;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+  background-color: rgba($gray, .5);
+  background-image: url('../../../../../shared/assets/arrow-left.svg');
+  background-position: 41% 50%;
+
+  &--to-right {
+    right: 0;
+
+    transform: rotateZ(180deg);
+  }
+
+  &--is-disabled {
+    display: none;
+  }
+}
+

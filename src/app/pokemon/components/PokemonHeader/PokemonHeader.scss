@@ -1,0 +1,32 @@
+@import '../../../../_variables.scss';
+
+.pokemon-header {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  padding: 1rem;
+
+  background: $red;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+
+  .back-button {
+    display: flex;
+
+    width: 13px;
+    height: 22px;
+
+    background-image: url('../../../../shared/assets/arrow-left.svg');
+  }
+
+  h1 {
+    margin: 0 auto;
+    padding: 0;
+
+    text-transform: capitalize;
+
+    color: $white;
+  }
+}

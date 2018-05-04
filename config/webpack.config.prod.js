@@ -210,6 +210,13 @@ module.exports = {
             ),
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
           },
+          {
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            include: [
+                path.resolve(__dirname, 'src/shared/assets')
+            ],
+            use: 'file-loader?name=[path][name].[ext]'
+          },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
           // This loader doesn't use a "test" so it will catch all modules

@@ -44,7 +44,7 @@ export const forms = {
     'rotom-heat',
     'rotom-wash',
     'rotom-frost',
-    'rotom-fam',
+    'rotom-fan',
     'rotom-mow',
   ],
   '487': ['giratina-altered', 'giratina-origin'],
@@ -244,3 +244,5 @@ export const sprites = {
   '746': ['n746--solo', 'n746--school'],
   '774': ['n774--meteor', 'n774--core'],
 };
+
+export const ARTWORK_URL = 'https://img.pokemondb.net/artwork/';

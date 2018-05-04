@@ -1,0 +1,10 @@
+## Pokémon Header Component
+    <PokemonHeader name="Bulbasaur" color="green" />
+    <PokemonHeader name="Squirtle" color="blue" />
+    <PokemonHeader name="Charmander" color="red" />
+    <PokemonHeader name="Pikachu" color="yellow" />
+    <PokemonHeader name="Mewtwo" color="purple" />
+    <PokemonHeader name="Mew" color="pink" />
+    <PokemonHeader name="Volcanium" color="brown" />
+    <PokemonHeader name="Necrozma" color="black" />
+    <PokemonHeader name="Marshadow" color="gray" />

@@ -1,0 +1,89 @@
+@import '../../../../_variables.scss';
+
+.pokemon-type {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+
+  padding: 1rem;
+
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  &--is-bug {
+    background-color: $bug;
+  }
+
+  &--is-dark {
+    background-color: $dark;
+  }
+
+  &--is-dragon {
+    background-color: $dragon;
+  }
+
+  &--is-electric {
+    background-color: $electric;
+  }
+
+  &--is-fairy {
+    background-color: $fairy;
+  }
+
+  &--is-fighting {
+    background-color: $fighting;
+  }
+
+  &--is-fire {
+    background-color: $fire;
+  }
+
+  &--is-flying {
+    background-color: $flying;
+  }
+
+  &--is-ghost {
+    background-color: $ghost;
+  }
+
+  &--is-grass {
+    background-color: $grass;
+  }
+
+  &--is-ground {
+    background-color: $ground;
+  }
+
+  &--is-ice {
+    background-color: $ice;
+  }
+
+  &--is-normal {
+    background-color: $normal;
+  }
+
+  &--is-poison {
+    background-color: $poison;
+  }
+
+  &--is-psychic {
+    background-color: $psychic;
+  }
+
+  &--is-rock {
+    background-color: $rock;
+  }
+
+  &--is-steel {
+    background-color: $steel;
+  }
+
+  &--is-water {
+    background-color: $water;
+  }
+}
